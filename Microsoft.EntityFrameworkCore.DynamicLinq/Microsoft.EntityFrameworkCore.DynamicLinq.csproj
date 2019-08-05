@@ -1,0 +1,92 @@
+﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+    <PropertyGroup>
+        <Description>Dynamic Linq extensions for Microsoft.EntityFrameworkCore which adds Async support</Description>
+        <AssemblyTitle>Microsoft.EntityFrameworkCore.DynamicLinq</AssemblyTitle>
+        <!--<VersionPrefix>1.0.9.1</VersionPrefix>-->
+        <Authors>Stef Heyenrath</Authors>
+        <TargetFrameworks>netcoreapp2.2</TargetFrameworks>
+        <DefineConstants>$(DefineConstants);EFCORE</DefineConstants>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <AssemblyName>Microsoft.EntityFrameworkCore.DynamicLinq</AssemblyName>
+        <AssemblyOriginatorKeyFile>Microsoft.EntityFrameworkCore.DynamicLinq.snk</AssemblyOriginatorKeyFile>
+        <SignAssembly>true</SignAssembly>
+        <PublicSign Condition=" '$(OS)' != 'Windows_NT' ">true</PublicSign>
+        <PackageTags>system;linq;dynamic;entityframework;core;async</PackageTags>
+        <PackageReleaseNotes>Bugfixes and new Features. For details see CHANGELOG.md</PackageReleaseNotes>
+        <PackageProjectUrl>https://github.com/StefH/System.Linq.Dynamic.Core</PackageProjectUrl>
+        <PackageLicenseUrl>https://raw.githubusercontent.com/StefH/System.Linq.Dynamic.Core/master/LICENSE</PackageLicenseUrl>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/StefH/System.Linq.Dynamic.Core</RepositoryUrl>
+        <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+        <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+        <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+        <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+        <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+        <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+        <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+        <DefaultLanguage>en-us</DefaultLanguage>
+        <ProjectGuid>{D3804228-91F4-4502-9595-39584E510001}</ProjectGuid>
+        <DebugType>full</DebugType>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+        <IncludeSource>True</IncludeSource>
+        <IncludeSymbols>True</IncludeSymbols>
+        <PathMap>$(MSBuildProjectDirectory)=/</PathMap>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
+        <DefineConstants>$(DefineConstants);NETSTANDARD</DefineConstants>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="..\System.Linq.Dynamic.Core\Res.cs" />
+        <Compile Include="..\System.Linq.Dynamic.Core\Compatibility\*.cs" />
+        <Compile Include="..\System.Linq.Dynamic.Core\Extensions\*.cs" />
+        <Compile Include="..\System.Linq.Dynamic.Core\Validation\*.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\System.Linq.Dynamic.Core\System.Linq.Dynamic.Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="JetBrains.Annotations" Version="10.2.1" PrivateAssets="All" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="1.1.0" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net451' ">
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="1.1.0" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net452' ">
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="1.1.0" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net46' ">
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="1.1.0" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="1.1.0" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="1.1.0" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.0.1" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp2.2' ">
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.6" />
+    </ItemGroup>
+
+</Project>
