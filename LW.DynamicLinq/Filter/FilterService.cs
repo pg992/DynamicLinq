@@ -16,8 +16,10 @@ namespace LW.DynamicLinq.Filter
                 {
                     dynamicQuery = dynamicQuery.Where($"{filters.FilterColumnName}{CalculateExpression(filters.FilterTypeVal)}", filters.FilterValue);
                 }
-
-                dynamicQuery = dynamicQuery.Where($"{filters.FilterTableName}{CalculateNestedExpression(filters.FilterTypeVal, filters.FilterColumnName)}", filters.FilterValue);
+                else
+                {
+                    dynamicQuery = dynamicQuery.Where($"{filters.FilterTableName}{CalculateNestedExpression(filters.FilterTypeVal, filters.FilterColumnName)}", filters.FilterValue);
+                }
             }
 
             return dynamicQuery;
@@ -31,8 +33,10 @@ namespace LW.DynamicLinq.Filter
                 {
                     query = query.Where($"{filters.FilterColumnName}{CalculateExpression(filters.FilterTypeVal)}", filters.FilterValue);
                 }
-
-                query = query.Where($"{filters.FilterTableName}{CalculateNestedExpression(filters.FilterTypeVal, filters.FilterColumnName)}", filters.FilterValue);
+                else
+                {
+                    query = query.Where($"{filters.FilterTableName}{CalculateNestedExpression(filters.FilterTypeVal, filters.FilterColumnName)}", filters.FilterValue);
+                }
             }
 
             return query;
