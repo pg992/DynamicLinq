@@ -3,6 +3,11 @@
     public class FilterFields
     {
         /// <summary>
+        ///     Gets or sets the filter table name
+        /// </summary>
+        public string FilterTableName { get; set; }
+
+        /// <summary>
         ///     Gets or sets the filter column name
         /// </summary>
         public string FilterColumnName { get; set; }

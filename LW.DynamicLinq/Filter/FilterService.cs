@@ -12,7 +12,12 @@ namespace LW.DynamicLinq.Filter
             IQueryable<TEntity> dynamicQuery = query;
             foreach (var filters in fields)
             {
-                dynamicQuery = dynamicQuery.Where($"{filters.FilterColumnName}{CalculateExpression(filters.FilterTypeVal)}", filters.FilterValue);
+                if (string.IsNullOrWhiteSpace(filters.FilterTableName))
+                {
+                    dynamicQuery = dynamicQuery.Where($"{filters.FilterColumnName}{CalculateExpression(filters.FilterTypeVal)}", filters.FilterValue);
+                }
+
+                dynamicQuery = dynamicQuery.Where($"{filters.FilterTableName}{CalculateNestedExpression(filters.FilterTypeVal, filters.FilterColumnName)}", filters.FilterValue);
             }
 
             return dynamicQuery;
@@ -22,12 +27,16 @@ namespace LW.DynamicLinq.Filter
         {
             foreach (var filters in fields)
             {
-                query = query.Where($"{filters.FilterColumnName}{CalculateExpression(filters.FilterTypeVal)}", filters.FilterValue);
+                if (string.IsNullOrWhiteSpace(filters.FilterTableName))
+                {
+                    query = query.Where($"{filters.FilterColumnName}{CalculateExpression(filters.FilterTypeVal)}", filters.FilterValue);
+                }
+
+                query = query.Where($"{filters.FilterTableName}{CalculateNestedExpression(filters.FilterTypeVal, filters.FilterColumnName)}", filters.FilterValue);
             }
 
             return query;
         }
-
 
         private static string CalculateExpression(FilterType type)
         {
@@ -44,6 +53,11 @@ namespace LW.DynamicLinq.Filter
                 default:
                     return "=@0";
             }
+        }
+
+        private static string CalculateNestedExpression(FilterType type, string paramName)
+        {
+            return $".Any({paramName}{CalculateExpression(type)})";
         }
     }
 }

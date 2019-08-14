@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace TestApp.Pagination
+namespace LW.DynamicLinq.Pagination
 {
     public static class PaginationService
     {
