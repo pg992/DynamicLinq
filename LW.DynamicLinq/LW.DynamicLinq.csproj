@@ -10,8 +10,19 @@
     <Company>LiveWired</Company>
   </PropertyGroup>
 
+  <!--<ItemGroup>
+    <Compile Include="..\System.Linq.Dynamic.Core\Compatibility\CustomIntrospectionExtensions.cs" Link="EntityFrameworkCore.DynamicLinq\CustomIntrospectionExtensions.cs" />
+    <Compile Include="..\System.Linq.Dynamic.Core\Compatibility\CustomTypeBuilderExtensions.cs" Link="EntityFrameworkCore.DynamicLinq\CustomTypeBuilderExtensions.cs" />
+    <Compile Include="..\System.Linq.Dynamic.Core\Compatibility\CustomTypeConverterExtensions.cs" Link="EntityFrameworkCore.DynamicLinq\CustomTypeConverterExtensions.cs" />
+    <Compile Include="..\System.Linq.Dynamic.Core\Compatibility\ExpressionVisitor.cs" Link="EntityFrameworkCore.DynamicLinq\ExpressionVisitor.cs" />
+    <Compile Include="..\System.Linq.Dynamic.Core\Res.cs" Link="EntityFrameworkCore.DynamicLinq\Res.cs" />
+    <Compile Include="..\System.Linq.Dynamic.Core\Validation\Check.cs" Link="EntityFrameworkCore.DynamicLinq\Check.cs" />
+    <Compile Include="..\System.Linq.Dynamic.Core\Validation\CoreStrings.cs" Link="EntityFrameworkCore.DynamicLinq\CoreStrings.cs" />
+  </ItemGroup>-->
+
   <ItemGroup>
     <PackageReference Include="JetBrains.Annotations" Version="10.2.1" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.2.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.2.6">
@@ -21,8 +32,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Microsoft.EntityFrameworkCore.DynamicLinq\Microsoft.EntityFrameworkCore.DynamicLinq.csproj" />
-    <ProjectReference Include="..\System.Linq.Dynamic.Core\System.Linq.Dynamic.Core.csproj" />
+    <Folder Include="EntityFrameworkCore.DynamicLinq\" />
+    <Folder Include="Linq.Dynamic.Core\" />
   </ItemGroup>
 
 </Project>
