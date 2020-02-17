@@ -1,20 +1,14 @@
 ﻿using LW.DynamicLinq.Filter;
 using LW.DynamicLinq.Select;
 using LW.DynamicLinq.Sort;
-//using Microsoft.EntityFrameworkCore.Query;
 using System.Collections.Generic;
-//using System.Linq;
-//using System.Linq.Dynamic.Core;
-//using System.Threading.Tasks;
-//using TestApp.Models;
-//using TestApp.Pagination;
 
 namespace LW.DynamicLinq
 {
     /// <summary>
     ///     Sort filter properties
     /// </summary>
-    public class SortFilterPageProperties
+    public class SortFilterPageProperties<T>
     {
         public List<SelectFields> SelectFieldList { get; set; }
 
@@ -22,9 +16,9 @@ namespace LW.DynamicLinq
 
         public SortFields SortField { get; set; }
 
-        public int StartRecord { get; set; }
+        public int? StartRecord { get; set; }
 
-        public int RecordCount { get; set; }
+        public int? RecordCount { get; set; }
 
         public SortFilterPageProperties()
         {

@@ -4,7 +4,7 @@
         <AssemblyTitle>EntityFramework.DynamicLinq</AssemblyTitle>
         <!--<VersionPrefix>1.0.9.1</VersionPrefix>-->
         <Authors>Stef Heyenrath</Authors>
-        <TargetFrameworks>net45;net46</TargetFrameworks>
+        <TargetFrameworks>netcoreapp2.2</TargetFrameworks>
         <DefineConstants>EF</DefineConstants>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <AssemblyName>EntityFramework.DynamicLinq</AssemblyName>

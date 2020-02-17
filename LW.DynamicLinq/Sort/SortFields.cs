@@ -4,6 +4,6 @@
     {
         public string SortColumnName { get; set; }
 
-        public SortOrder SortOrder { get; set; }
+        public SortOrder? SortOrder { get; set; }
     }
 }

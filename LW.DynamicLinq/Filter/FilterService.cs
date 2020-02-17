@@ -14,11 +14,11 @@ namespace LW.DynamicLinq.Filter
             {
                 if (string.IsNullOrWhiteSpace(filters.FilterTableName))
                 {
-                    dynamicQuery = dynamicQuery.Where($"{filters.FilterColumnName}{CalculateExpression(filters.FilterTypeVal)}", filters.FilterValue);
+                    dynamicQuery = dynamicQuery.Where($"{filters.FilterColumnName}{CalculateExpression(filters.FilterTypeVal.Value)}", filters.FilterValue);
                 }
                 else
                 {
-                    dynamicQuery = dynamicQuery.Where($"{filters.FilterTableName}{CalculateNestedExpression(filters.FilterTypeVal, filters.FilterColumnName)}", filters.FilterValue);
+                    dynamicQuery = dynamicQuery.Where($"{filters.FilterTableName}{CalculateNestedExpression(filters.FilterTypeVal.Value, filters.FilterColumnName)}", filters.FilterValue);
                 }
             }
 
@@ -31,11 +31,11 @@ namespace LW.DynamicLinq.Filter
             {
                 if (string.IsNullOrWhiteSpace(filters.FilterTableName))
                 {
-                    query = query.Where($"{filters.FilterColumnName}{CalculateExpression(filters.FilterTypeVal)}", filters.FilterValue);
+                    query = query.Where($"{filters.FilterColumnName}{CalculateExpression(filters.FilterTypeVal.Value)}", filters.FilterValue);
                 }
                 else
                 {
-                    query = query.Where($"{filters.FilterTableName}{CalculateNestedExpression(filters.FilterTypeVal, filters.FilterColumnName)}", filters.FilterValue);
+                    query = query.Where($"{filters.FilterTableName}{CalculateNestedExpression(filters.FilterTypeVal.Value, filters.FilterColumnName)}", filters.FilterValue);
                 }
             }
 

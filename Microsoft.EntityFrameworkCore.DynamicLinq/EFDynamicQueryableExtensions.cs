@@ -13,13 +13,13 @@ using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using JetBrains.Annotations;
-using Microsoft.EntityFrameworkCore.Query.Internal;
+//using Microsoft.EntityFrameworkCore.Query.Internal;
 
-#if EFCORE
+//#if EFCORE
 namespace Microsoft.EntityFrameworkCore.DynamicLinq
-#else
-namespace EntityFramework.DynamicLinq
-#endif
+//#else
+//namespace EntityFramework.DynamicLinq
+//#endif
 {
     /// <summary>
     /// Provides a set of static Async methods for querying data structures that implement <see cref="IQueryable"/>.

@@ -20,6 +20,6 @@
         /// <summary>
         ///     Gets or sets the filter value
         /// </summary>
-        public FilterType FilterTypeVal { get; set; }
+        public FilterType? FilterTypeVal { get; set; }
     }
 }
