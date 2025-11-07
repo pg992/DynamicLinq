@@ -47,11 +47,11 @@ namespace LW.DynamicLinq.Filter
             switch (type)
             {
                 case FilterType.Contains:
-                    return ".Contains(@0)";
+                    return ".ToLower().Contains(@0.ToLower())";
                 case FilterType.StartsWith:
-                    return ".StartsWith(@0)";
+                    return ".ToLower().StartsWith(@0.ToLower())";
                 case FilterType.EndsWith:
-                    return ".EndsWith(@0)";
+                    return ".ToLower().EndsWith(@0.ToLower())";
                 case FilterType.Equals:
                     return "=@0";
                 default:
