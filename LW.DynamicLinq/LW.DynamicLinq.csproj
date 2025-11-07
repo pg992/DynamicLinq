@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <TrimUnusedDependencies>true</TrimUnusedDependencies>
-    <VersionPrefix>0.3.2</VersionPrefix>
+    <VersionPrefix>0.3.3</VersionPrefix>
     <PackageId>LW.DynamicLinq</PackageId>
     <Authors>Petar Gjeorgiev</Authors>
     <TrimUnusedDependencies>true</TrimUnusedDependencies>
